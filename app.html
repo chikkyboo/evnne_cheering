@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EVNNE 応援アプリ風ページ</title>
+
+<!-- 外部CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="header-bg"></div>
+  <img src="assets/img/evnne_logo_red.jpg" alt="EVNNE" class="header-logo">
+  <div class="header-info">
+    <h1>EVNNE 1st Single Album “Backtalk”</h1>
+    <p>2026.04.20 6PM (KST)</p>
+  </div>
+</header>
+
+<!-- MV -->
+<h2 class="section-title">🎬 MV 応援</h2>
+<div class="section mv-box">
+  <iframe src="https://www.youtube.com/embed/2pm8e8i4mGs" frameborder="0" allowfullscreen></iframe>
+
+  <p style="margin-top:10px; font-size:0.9rem; color:#ccc;">
+    ※ 現在は前回リリースのMVを表示しています。<br>
+    タイトル曲のMVは公開後に切り替わります。
+  </p>
+
+  <div class="mv-stats">
+    <strong>🎯 目標再生回数</strong><br>
+    ・24時間：1,500,000 回<br>
+    ・5日間：5,000,000 回<br>
+    ・1週間：7,000,000 回<br><br>
+
+    <strong>📈 現在の再生回数</strong><br>
+    現在：TBD 回
+  </div>
+</div>
+
+<!-- TODAY’S MISSION -->
+<h2 class="section-title" id="mission-title">🔥 TODAY’S MISSION</h2>
+<div class="section" id="today-mission">読み込み中…</div>
+
+
+<script>
+  fetch("missions/today.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("today-mission").innerHTML = html)
+    .catch(() => document.getElementById("today-mission").innerHTML = "読み込みエラー");
+</script>
+
+<!-- カレンダー -->
+<h2 class="section-title" id="calendar-title">📅 スケジュール</h2>
+<div class="section" id="calendar-area">読み込み中…</div>
+
+
+<script>
+  fetch("calendar/schedule.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("calendar-area").innerHTML = html)
+    .catch(() => document.getElementById("calendar-area").innerHTML = "読み込みエラー");
+</script>
+
+<!-- Stationhead（簡易版） -->
+<h2 class="section-title" id="stationhead-title">📻 Stationhead</h2>
+<div class="section">
+
+  <!-- ティッカー（現在再生中風） -->
+  <div style="
+    margin-bottom:12px;
+    padding:10px;
+    background:#111;
+    border:1px solid #d00000;
+    border-radius:6px;
+    overflow:hidden;
+    white-space:nowrap;
+  ">
+    <marquee behavior="scroll" direction="left" scrollamount="4" style="color:#ffcccc;">
+      🎧 Stationhead：EVNNE の楽曲を一緒に再生してチャート反映をサポートしよう！
+    </marquee>
+  </div>
+
+  <!-- 注意書き -->
+  <p style="font-size:0.9rem; color:#ccc; margin-bottom:10px;">
+    ※ Stationhead は <strong>Apple Music または Spotify の有料会員</strong> のみ参加できます。
+  </p>
+
+  <!-- 誘導リンク -->
+  <a class="btn" href="stationhead.html">
+    Stationhead の詳しい使い方はこちら
+  </a>
+
+</div>
+
+
+<!-- Spotify -->
+<h2 class="section-title" id="spotify-title">🎧 Spotify 再生リスト</h2>
+<div class="section" id="spotify-area">読み込み中…</div>
+
+<script>
+  fetch("sections/spotify.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("spotify-area").innerHTML = html)
+    .catch(() => document.getElementById("spotify-area").innerHTML = "まだ準備中");
+</script>
+
+<!-- CDショップ販売情報 -->
+<h2 class="section-title" id="cdshop-title">💿 CDショップ販売情報</h2>
+<div class="section" id="cdshop-area">
+  読み込み中…
+</div>
+
+<script>
+  fetch("cdshops/list.html")
+    .then(res => res.text())
+    .then(html => document.getElementById("cdshop-area").innerHTML = html)
+    .catch(() => document.getElementById("cdshop-area").innerHTML = "読み込みエラー");
+</script>
+
+
+<!-- アプリ別ガイド -->
+<h2 class="section-title">📱 投票アプリ別ガイド</h2>
+<div class="app-card-grid">
+  <a class="app-card" href="apps/idolchamp.html">
+    <img src="assets/img/apps/idolchamp.png" alt="IDOL CHAMP">
+    <span>IDOL CHAMP</span>
+  </a>
+  <a class="app-card" href="apps/fancast.html">
+    <img src="assets/img/apps/fancast.png" alt="FANCAST">
+    <span>FANCAST</span>
+  </a>
+  <a class="app-card" href="apps/higher.html">
+    <img src="assets/img/apps/higher.png" alt="HIGHER">
+    <span>HIGHER</span>
+  </a>
+  <a class="app-card" href="apps/linc.html">
+    <img src="assets/img/apps/linc.png" alt="LiNC">
+    <span>LiNC</span>
+  </a>
+  <a class="app-card" href="apps/mubeat.html">
+    <img src="assets/img/apps/mubeat.png" alt="Mubeat">
+    <span>Mubeat</span>
+  </a>
+  <a class="app-card" href="apps/mnetplus.html">
+    <img src="assets/img/apps/mnetplus.png" alt="Mnet Plus">
+    <span>Mnet Plus</span>
+  </a>
+  <a class="app-card" href="apps/duckad.html">
+    <img src="assets/img/apps/duckad.png" alt="DUCK AD">
+    <span>DUCK AD</span>
+  </a>
+</div>
+
+<footer class="main-footer">
+  <p>EVNNE JAPAN Vote Team</p>
+  <p class="small">© 2026 EVNNE Support Project</p>
+</footer>
+
+<!-- 下部ナビ -->
+<div class="bottom-nav">
+  <a href="index.html">
+    🔙<span>ホーム</span>
+  </a>
+  <a href="#mission-title">
+    🔥<span>ミッション</span>
+  </a>
+  <a href="#calendar-title">
+    📅<span>スケジュール</span>
+  </a>
+  <a href="#spotify-title">
+    🎧<span>Spotify</span>
+  </a>
+</div>
+
+</body>
+</html>

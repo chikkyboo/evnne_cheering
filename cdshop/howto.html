@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDショップ情報の編集方法（Voteチーム専用）</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="header-bg"></div>
+  <h1>CDショップ情報の編集方法</h1>
+  <p class="sub">Voteチーム専用マニュアル</p>
+</header>
+
+<h2 class="section-title">📁 編集するファイル</h2>
+<div class="section">
+  <p>CDショップ情報は以下のファイルで管理されています：</p>
+  <p><code>cdshops/list.html</code></p>
+
+  <img src="../assets/img/howto/cd_path.png"
+       alt="cdshops/list.html の場所"
+       style="width:100%; border-radius:6px; margin-top:10px;">
+</div>
+
+<h2 class="section-title">📝 編集手順</h2>
+<div class="section">
+  <ol>
+    <li>GitHub のリポジトリを開く</li>
+    <li><code>cdshops/list.html</code> をクリック</li>
+    <li>右上の ✏（鉛筆）アイコンを押す</li>
+    <li>該当する「形態」の下に <code>.cdshop-card</code> を追加</li>
+    <li>特典・価格・リンクを更新</li>
+    <li>「Commit changes」で保存</li>
+  </ol>
+
+  <img src="../assets/img/howto/cd_edit.png"
+       alt="list.html 編集画面"
+       style="width:100%; border-radius:6px; margin-top:10px;">
+</div>
+
+<h2 class="section-title">💡 編集のコツ</h2>
+<div class="section">
+  <ul>
+    <li>形態（通常盤 / デジパ / 5枚セット / FC）ごとに整理すると見やすい</li>
+    <li>同じ店舗で複数形態がある場合はカードを複製</li>
+    <li>特典はショップごとに異なるので必ず記載</li>
+    <li>デザインは style.css が担当 → 壊れません</li>
+  </ul>
+</div>
+
+<h2 class="section-title">📦 カードのテンプレ</h2>
+<div class="section">
+  <p>新しいショップを追加するときは、以下をコピーして使ってください：</p>
+
+  <pre style="white-space:pre-wrap; background:#111; padding:10px; border-radius:6px; border:1px solid #444;">
+&lt;div class="cdshop-card"&gt;
+  &lt;h4&gt;📍 ショップ名&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;特典：TBD&lt;/li&gt;
+    &lt;li&gt;価格：TBD&lt;/li&gt;
+    &lt;li&gt;販売開始：TBD&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a class="btn" href="#" target="_blank"&gt;ショップを開く&lt;/a&gt;
+&lt;/div&gt;
+  </pre>
+</div>
+
+<footer class="main-footer">
+  <p>EVNNE JAPAN Vote Team</p>
+  <p class="small">© 2026 EVNNE Support Project</p>
+</footer>
+
+</body>
+</html>
