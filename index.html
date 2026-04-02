@@ -113,17 +113,9 @@
 
 </div>
 
-
-<!-- Spotify -->
-<h2 class="section-title">🎧 Spotify 再生リスト</h2>
-<div class="section" id="spotify-area">読み込み中…</div>
-
-<script>
-  fetch("sections/spotify.html")
-    .then(res => res.text())
-    .then(html => document.getElementById("spotify-area").innerHTML = html)
-    .catch(() => document.getElementById("spotify-area").innerHTML = "まだ準備中");
-</script>
+<!--
+（ここ全部コメントアウト）
+-->
 
 <!-- CDショップ販売情報 -->
 <h2 class="section-title" id="cdshop-title">💿 CDショップ販売情報</h2>
