@@ -116,7 +116,7 @@
 </div>
 
 <script>
-  fetch("cdshops/list.html")
+  fetch("cdshop/list.html")
     .then(res => res.text())
     .then(html => document.getElementById("cdshop-area").innerHTML = html)
     .catch(() => document.getElementById("cdshop-area").innerHTML = "読み込みエラー");
