@@ -2,7 +2,7 @@
    基本設定
 ========================================= */
 body {
-  background-color:#000 !important; /* ← ボディを完全な黒に強制 */
+  background-color:#000 !important; /* ボディを完全な黒に固定 */
   color:#fff;
   font-family:"Noto Sans JP",sans-serif;
   margin:0;
@@ -78,7 +78,13 @@ img { display:block; max-width:100%; }
   margin:0 20px 25px 20px;
   border-radius:4px;
   background:#000;
-  color:#fff !important; /* ← LINE セクションの文字が黒くなる問題を修正 */
+  color:#fff !important; /* LINE の文字が黒くなる問題を防止 */
+}
+
+.section p,
+.section li,
+.section a {
+  color:#fff !important;
 }
 
 @media (min-width: 768px) {
@@ -90,6 +96,34 @@ img { display:block; max-width:100%; }
     max-width:800px;
     margin:40px auto 15px;
   }
+}
+
+/* =========================================
+   TODAY’S MISSION（外部HTMLの整形）
+========================================= */
+#today-mission ul {
+  list-style-type:disc;
+  padding-left:20px;
+}
+
+#today-mission li {
+  margin-bottom:6px;
+}
+
+.mission-howto {
+  margin-top:20px;
+  color:#ccc;
+}
+
+.mission-howto summary {
+  cursor:pointer;
+  color:#ffcc00;
+}
+
+.mission-howto div {
+  margin-top:10px;
+  font-size:0.9rem;
+  line-height:1.6;
 }
 
 /* =========================================
@@ -188,43 +222,6 @@ iframe {
 .tips-list li { margin-bottom:6px; }
 
 /* =========================================
-   TODAY’S MISSION / HowTo
-========================================= */
-
-/* ← 今日のミッションを「普通の箇条書き」にする */
-#today-mission ul {
-  list-style-type: disc;
-  padding-left:20px;
-}
-
-#today-mission li {
-  margin-bottom:6px;
-}
-
-.edit-helper summary {
-  cursor:pointer;
-  color:#ffcc00;
-  font-size:0.95rem;
-}
-
-.edit-box {
-  background:#111;
-  border:1px solid #444;
-  padding:10px 15px;
-  margin-top:10px;
-  border-radius:6px;
-  font-size:0.85rem;
-  color:#ccc;
-}
-
-.edit-box code {
-  background:#222;
-  padding:2px 4px;
-  border-radius:4px;
-  color:#ffcc00;
-}
-
-/* =========================================
    カレンダー（schedule.html）
 ========================================= */
 .calendar {
@@ -294,6 +291,19 @@ iframe {
 }
 
 /* =========================================
+   X（Twitter埋め込み対策）
+========================================= */
+.twitter-box,
+.twitter-box * {
+  color:#fff !important;
+}
+
+.twitter-box blockquote {
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* =========================================
    下部ナビ（app.html）
 ========================================= */
 .bottom-nav {
@@ -322,7 +332,7 @@ iframe {
 }
 
 /* =========================================
-   フッター（修正版）
+   フッター
 ========================================= */
 .main-footer {
   text-align:center;
